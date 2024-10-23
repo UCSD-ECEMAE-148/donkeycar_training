@@ -2,7 +2,7 @@
 FROM ubuntu:18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG venv_name=env
+ARG venv_name=donkey
 
 RUN apt-get clean
 RUN apt-get -y update
