@@ -29,7 +29,7 @@ RUN apt-get -y install build-essential \
                        libhdf5-serial-dev \
                        git \
                        ntp
-RUN python3 -m venv env --system-site-packages
+RUN python3 -m venv $venv_name --system-site-packages
 
 RUN git clone https://github.com/autorope/donkeycar
 
@@ -37,7 +37,7 @@ RUN git clone https://github.com/autorope/donkeycar
 
 WORKDIR /donkeycar
 
-RUN git checkout 4.5.1
+RUN git checkout 4.4.0
 RUN . /$venv_name/bin/activate && pip install pip --upgrade
 RUN . /$venv_name/bin/activate && pip install -e .
 # RUN . /$venv_name/bin/activate && pip install tensorflow==1.13.1
@@ -54,7 +54,8 @@ RUN . /$venv_name/bin/activate && pip install tensorflow
 # Install KERAS VIS and ffmpeg for video generation
 RUN . /$venv_name/bin/activate && pip install git+https://github.com/autorope/keras-vis.git
 RUN . /$venv_name/bin/activate && pip install opencv-python==4.6.0.66
-RUN . /$venv_name/bin/activate && pip install numpy==1.19 && \
+RUN . /$venv_name/bin/activate && \ 
+    # pip install numpy==1.19 && \
     apt-get -y install ffmpeg
 
 RUN . /$venv_name/bin/activate && donkey createcar --path ~/mycar --overwrite
