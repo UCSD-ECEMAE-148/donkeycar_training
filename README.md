@@ -11,21 +11,26 @@ git clone https://github.com/UCSD-ECEMAE-148/donkeycar_training.git
 cd donkeycar_training/
 ```
 
-3. Execute the following command, and your terminal (__Container Terminal__) will be in the container environment:
+3. Build container image. __No need__ to rebuild if you've built it.
+```
+bash build_donkey_v4.sh
+```
+
+4. Execute the following command, and your terminal (__Container Terminal__) will be in the container environment:
 ```
 bash run.sh
 ```
-4. Now, your container terminal's working directory should be in `~/mycar`. Please open a new terminal (__Local terminal__) on your local machine, and send you data to `~/mycar/data`. Use the following command,
+5. Now, your container terminal's working directory should be in `~/mycar`. Please open a new terminal (__Local terminal__) on your local machine, and send you data to `~/mycar/data`. Use the following command,
 ```
 cd <directory to this repo>/donkeycar_training/
 docker cp <directory to your recorded data> donkey_v4:~/mycar/data
 ```
-5. Go back to the __Container Terminal__. Train the model, using the command below in the container terminal. And wait for it to finish.
+6. Go back to the __Container Terminal__. Train the model, using the command below in the container terminal. And wait for it to finish.
 ```
 bash train.py
 ```
-6. In the __Local terminal__,do
+7. In the __Local terminal__,do
 ```
 bash send_model.sh
 ```
-7. Finally, your models should be in the `model_output/`
+8. Finally, your models should be in the `model_output/`
