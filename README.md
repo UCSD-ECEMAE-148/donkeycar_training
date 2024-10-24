@@ -27,7 +27,7 @@ docker cp <directory to your recorded data> donkey_v4:~/mycar/data
 ```
 6. Go back to the __Container Terminal__. Train the model, using the command below in the container terminal. And wait for it to finish.
 ```
-bash train.py
+bash train.sh
 ```
 7. In the __Local terminal__,do
 ```
