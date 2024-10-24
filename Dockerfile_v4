@@ -53,7 +53,9 @@ RUN . /$venv_name/bin/activate && pip install tensorflow
 
 # Install KERAS VIS and ffmpeg for video generation
 RUN . /$venv_name/bin/activate && pip install git+https://github.com/autorope/keras-vis.git
-RUN . /$venv_name/bin/activate && pip install opencv-python==4.6.0.66
+RUN . /$venv_name/bin/activate && \
+    pip install opencv-python==4.6.0.66 \
+    pip install albumentations
 RUN . /$venv_name/bin/activate && \ 
     pip install numpy==1.19 && \
     apt-get -y install ffmpeg
