@@ -1,0 +1,4 @@
+model_output/*.h5
+model_output/*.tflite
+model_output/*.json
+model_output/models/*
