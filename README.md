@@ -25,6 +25,11 @@ bash run.sh
 cd <directory to this repo>/donkeycar_training/
 docker cp <directory to your recorded data> donkey_v4:~/mycar/data
 ```
+An alternate way is to get the files over with rsync:
+```
+rsync -avr -e ssh jetson@ucsdrobocar-xxx-yy.local:projects/d4/data data/
+```
+
 6. Go back to the __Container Terminal__. Train the model, using the command below in the container terminal. And wait for it to finish.
 ```
 bash train.sh
